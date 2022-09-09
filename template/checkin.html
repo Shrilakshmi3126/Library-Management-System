@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>AIT</title>
+    <link href="{%static 'css/nav.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'css/style3.css'%}">
+    <link rel="stylesheet" href="{%static 'css/style2.css'%}">
+    <link rel = "icon" href ="{%static 'img/44851230.jpg'%}" type = "image/x-icon">
+</head>
+<body>
+  <!----nav open----------->
+  <div class="h22">
+    <nav class="h19">
+        <a href="https://atria.edu/home.php"><img src="{%static 'img/logo-ait-v1.png'%}" alt="avatar" ><link href="https://atria.edu/home.php"></a>
+        <div class="nav-links5">
+            
+            <ul>
+                <li><a href="{% url 'firstadminpg'%}">Checkin/Checkout</a></li>
+                <li><a href="{% url 'adminm'%}">Admin</a></li>
+                <li><a href="{% url 'welcome'%}">Logout</a></li>
+                <li><a href=""></a>
+                </li>
+                </ul>
+                </div>
+                </nav>
+                </div>
+  <!-------nav close------->
+  <section class="h0">
+
+  </section><br>
+  <center><h3><b>Log Book</b></h3></center>
+  <form  class="w-full max-w-lg mx-auto py-12" method="post" id="Myid" action="{% url 'checkin'%}">
+    {% csrf_token %}
+    
+
+      
+        <div class="table-responsive w-150" >
+            <table class="table table-responsive table-borderless">
+                <thead>
+                    <tr class="bg-light">
+                      
+                       
+                        <th scope="col" width="20%">Name</th>
+                        <th scope="col" width="20%">USN</th>
+                        <th scope="col" width="20%">Check in Time</th>
+                        <th scope="col" width="20%">Check out Time</th>
+                        <th scope="col" width="50%">Sem</th>
+                        <th scope="col" width="20%">Year</th>
+                        <th scope="col" width="20%">Branch</th>
+                        
+                       
+                    </tr>
+                </head>
+                <tbody>
+                    
+                    {% for key,value1 in data.items %}
+                  <tr>
+                      <td>{{ value1.sname }}</td>
+                    <td>{{ value1.usn }}</td>
+                    <td>{{ value1.cin }}</td>
+                    <td>{{ value1.cout }}</td>
+                    <td>{{ value1.sem }}</td>
+                    <td>{{ value1.year }}</td>
+
+                    
+                    <td>{{ value1.branch }}</td>
+                    
+                    
+                  </tr>
+                {% endfor %}     
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+      
+</form>
+    
+</body>
+</html>

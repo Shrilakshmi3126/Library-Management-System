@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{%static 'css/style2.css'%}">
+    <link rel="stylesheet" href="{%static 'css/style3.css'%}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIT</title>
+</head>
+<body>
+    <div class="h22">
+        <nav class="h19">
+            <a href="https://atria.edu/home.php"><img src="{% static 'img/logo-ait-v1.png' %}" alt="avatar" ><link href="https://atria.edu/home.php"></a>
+            <div class="nav-links5">
+                
+                <ul>
+                    <li><a href="{% url 'qp'%}">Question.Paper</a></li>
+                    <li><a href="{% url 'adminlogin'%}">Admin.Login</a></li>
+                    <li><a href="{% url 'studentlogin'%}">Student.Login</a>
+                    </li>
+                    </ul>
+                    </div>
+                    </nav>
+                    </div>
+                    <h1>Civil Engineering</h1>
+                    <div class="cards">
+                        <a href="{% url '3semCIV'%}"><div class="card">3rd<br>Semester</div></a>
+                        <a href="{% url '4semCIV'%}"><div class="card">4th<br>Semester</div></a>
+                        <a href="{% url '5semCIV'%}"><div class="card">5th<br>Semester</div></a>
+                        <a href="{% url '6semCIV'%}"><div class="card">6th<br>Semester</div></a>
+                        <a href="{% url '7semCIV'%}"><div class="card">7th<br>Semester</div></a>
+                        <a href="{% url '8semCIV'%}"><div class="card">8th<br>Semester</div></a>
+                        
+                       </div>
+    
+</body>
+</html>
+
+

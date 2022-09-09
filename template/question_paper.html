@@ -1,0 +1,155 @@
+
+<html>    
+    <head>
+        <style>
+            body { 
+      width: 100%;
+      height:100%;
+       font-family: 'Nanum Gothic', sans-serif;
+     
+      background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,1.2)),url(images/Untitled\ design\ \(2\).png);
+    
+    }
+        </style>
+    <title>AIT</title>
+    {% load static %}
+        <link rel="stylesheet" href="{%static 'css/style2.css'%}">
+        <link rel="stylesheet" href="{%static 'css/style3.css'%}">
+        <link rel="stylesheet" href="{%static 'css/style1.css'%}">
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel = "icon" href ="{% static 'img/lms.jpg' %}" type = "image/x-icon">
+        </head>
+        <body>
+            <div class="h22">
+                <nav class="h19">
+                    <a href="https://atria.edu/home.php"><img src="{% static 'img/logo-ait-v1.png' %}" alt="avatar" ><link href="https://atria.edu/home.php"></a>
+                    <div class="nav-links5">
+                        
+                        <ul>
+                            <li><a href="{% url 'welcome'%}">Home</a></li>
+                            <li><a href="{% url 'adminlogin'%}">Admin.Login</a></li>
+                            <li><a href="{% url 'studentlogin'%}">Student.Login</a>
+                            </li>
+                            </ul>
+                            </div>
+                            </nav>
+                            </div>
+    
+    
+    
+                            
+      <h1>Categories</h1>
+      <div class="cols">
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <a href="{% url 'bs'%}">
+                    <div class="container">
+                        <div class="front" style="background-image: url(static/img/science.jpg)">
+                            <div class="inner">
+                                <p>Basic Science</p>
+                  <span></span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                              <p>It is responsible for strengthening the very first understanding of the engineering profession that binds subjects of such as English, Mathematics, Physics, Chemistry.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>	
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <a href="{% url 'ci'%}">
+                    <div class="container">
+                        <div class="front" style="background-image:url(static/img/photo-1610563166150-b34df4f3bcd6.jpg)">
+                            <div class="inner">
+                                <p>CSE/ISE</p>
+                  <span></span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>Computer Science and Information Science Engineering is a course that deals with design the design and implementation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <a href="{% url 'me'%}">
+                    <div class="container">
+                        <div class="front" style="background-image: url(static/img/19-199981_75-of-the-best-engineering-wallpapers-from-across.jpg)">
+                            <div class="inner">
+                                <p>Mechanical</p>
+                  <span></span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>Tt is the application of the principles and problem-solving techniques of engineering from design to manufacturing to the marketplace for any object.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <a href="{% url 'civ'%}">
+                    <div class="container">
+                        <div class="front" style="background-image: url(static/img/photo-1536895058696-a69b1c7ba34f.jpg)">
+                            <div class="inner">
+                                <p>Civil</p>
+                  <span></span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>It is a professional engineering discipline that deals with the design, construction, and maintenance of the physical and naturally built environment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <a href="{% url 'ece'%}">
+                    <div class="container">
+                        <div class="front" style="background-image: url(static/img/9Rabej.jpg)">
+                            <div class="inner">
+                                <p>ECE</p>
+                  <span></span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>Electronics and Communications Engineering involves researching, designing, developing, and testing of electronic equipment used in various systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <a href="{% url 'math'%}">
+                    <div class="container">
+                        <div class="front" style="background-image: url(static/img/g0UCePYj5SRlAsPa1Gbbhtc5Xhu3xIPFUR9iXNEq.jpg)">
+                            <div class="inner">
+                                <p>Math</p>
+                  <span></span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>Engineering mathematics is the art of applying maths to complex real-world problems, combining mathematical theory, practical engineering.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+               
+            </div>
+     </div>
+    
+    
+    
+                            
+        </body>
+        </html>

@@ -1,0 +1,74 @@
+
+<html>
+    <head>
+        <title>Signup Page</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: white;
+            }
+            button{
+                background-color: white;
+                width: 25%;
+                padding: 15px;
+                color: black;
+                border: none;
+                float: center;
+                font-size: 15px;
+            }
+            label{
+                font-size: 20px;
+            }
+            form{
+                border: 3px solid #f1f1f1;
+            }
+            input[type=email],input[type=password]{
+                width: 50%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid white;
+                box-sizing: border-box;
+            }
+            button:hover{
+                opacity:0.7;
+
+            }
+            .container{
+                padding: 50px;
+                background-color: white;
+            }
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+            }
+              
+            img.avatar {
+                width: 20%;
+                border-radius: 50%;
+            }  
+        </style>
+    </head>
+    <body>
+        <center><h1>welcome admin</h1></center>
+        <form action="#" method="post">
+            {% csrf_token %}
+            {% load static %}
+            <left><div class="container">
+                
+                <li><a href="{% url 'upload'%}">Upload book</a></li><br> <br>
+                <button type="submit"><b>insert_book</b></button><br> <br>
+                <button type="submit"><b>update_book</b></button><br><br> 
+                <button type="submit"><b>delete_book</b></button><br> <br> <br>  
+                <button type="submit"><b>insert_Question_Paper</b></button><br> <br>
+                <button type="submit"><b>update_Question_Paper</b></button><br><br> 
+                <button type="submit"><b>delete_Question_Paper</b></button><br> <br> <br>  
+                <button type="submit"><b>insert_Journal/conference</b></button><br> <br>
+                <button type="submit"><b>update_Journal/conference</b></button><br><br> 
+                <button type="submit"><b>delete_Journal/conference</b></button><br> <br> <br>   
+                
+            </div></left>
+            
+        </form>
+    </body>

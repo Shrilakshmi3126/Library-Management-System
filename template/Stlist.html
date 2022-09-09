@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIT</title>
+  <link rel="stylesheet" href="{%static 'css/style3.css'%}">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{%static 'css/style2.css'%}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{%static 'css/tablecss.css'%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel = "icon" href ="{%static 'img/44851230.jpg'%}" type = "image/x-icon">
+</head>
+<body>
+  <div class="h22">
+    <nav class="h19">
+        <a href="https://atria.edu/home.php"><img src="{%static 'img/logo-ait-v1.png'%}" alt="avatar" ><link href="https://atria.edu/home.php"></a>
+        <div class="nav-links5">
+            
+            <ul>
+                <li><a href="{% url 'adminm'%}">Admin</a></li>
+                <li><a href="">Logout</a></li>
+                <li><a href=""></a>
+                </li>
+                </ul>
+                </div>
+                </nav>
+                </div>
+
+                
+              
+                <form method="get" action="#">
+                <div class="container mt-5 px-200 w-250">
+                  <div class="mb-6 d-flex justify-content-between align-items-center">
+                    <h1>Student Information</h1>
+                     
+                  </div>
+                  <div class="table-responsive w-150" >
+                      <table class="table table-responsive table-borderless">
+                          <thead>
+                              <tr class="bg-light">
+                                
+                                 
+                                  <th scope="col" width="20%">USN</th>
+                                  <th scope="col" width="20%">Name</th>
+                                  <th scope="col" width="20%">CardNo</th>
+                                  <th scope="col" width="20%">Email</th>
+                                  <th scope="col" width="20%">Phone</th>
+                                  <th scope="col" width="20%">Semester</th>
+                                  <th scope="col" width="20%">Branch</th>
+                                  <th scope="col" width="20%">Year</th>
+                                  <th scope="col" width="20%">Address</th>
+                                 
+                              </tr>
+                          </thead>
+                          <tbody>
+                              
+                              {% for key,value1 in data.items %}
+                            <tr>
+                                <td>{{ value1.sname }}</td>
+                              <td>{{ value1.sid }}</td>
+                              <td>{{ value1.address }}</td>
+                              <td>{{ value1.email }}</td>
+                              <td>{{ value1.phone }}</td>
+                              
+                              <td>{{ value1.cardno }}</td>
+                              <td>{{ value1.sem }}</td>
+                              <td>{{ value1.year }}</td>
+                              <td>{{ value1.branch }}</td>
+                              
+                            </tr>
+                          {% endfor %}     
+                              
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+                </form>
+              
+             
+  
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</html>

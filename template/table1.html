@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIT</title>
+  <link rel="stylesheet" href="{%static 'css/style3.css'%}">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{%static 'css/style2.css'%}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{%static 'css/tablecss.css'%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel = "icon" href ="{%static 'img/44851230.jpg'%}" type = "image/x-icon">
+</head>
+<body>
+  <div class="h22">
+    <nav class="h19">
+        <a href="https://atria.edu/home.php"><img src="{%static 'img/logo-ait-v1.png'%}" alt="avatar" ><link href="https://atria.edu/home.php"></a>
+        <div class="nav-links5">
+            
+            <ul>
+                <li><a href="{% url 'adminm'%}">Admin</a></li>
+                <li><a href="">Logout</a></li>
+                <li><a href=""></a>
+                </li>
+                </ul>
+                </div>
+                </nav>
+                </div>
+                <br>
+                <br>
+
+                <center><h3><b>Details of  books taken by students</b></h3></center>
+                <form  class="w-full max-w-5xl mx-auto py-12" method="post" id="Myid" action="{% url 'table1'%}">
+                  {% csrf_token %}
+                  
+          
+   
+                  
+                         
+                    
+          
+
+                  
+                    
+                      <div class="table-responsive w-150" >
+                          <table class="table table-responsive table-borderless">
+                              <thead>
+                                  <tr class="bg-light">
+                                    
+                                     
+                                      <th scope="col" width="20%">Name</th>
+                                      <th scope="col" width="20%">USN</th>
+                                      <th scope="col" width="20%">Book Id</th>
+                                      <th scope="col" width="20%">Book Name</th>
+                                      <th scope="col" width="50%">Date of Issue</th>
+                                      <th scope="col" width="80%">Due___Date_</th>
+                                      
+                                     
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  
+                                  {% for key,value1 in data.items %}
+                                <tr>
+                                    <td>{{ value1.sname }}</td>
+                                  <td>{{ value1.usn }}</td>
+                                  <td>{{ value1.bname }}</td>
+                                  <td>{{ value1.bid }}</td>
+                                  <td>{{ value1.date_issue }}</td>
+                                  
+                                  <td>{{ value1.due_date }}</td>
+                                  
+                                  
+                                </tr>
+                              {% endfor %}     
+                                  
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+                    
+</form>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</html>

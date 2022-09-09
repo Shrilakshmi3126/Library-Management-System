@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="{%static 'css/style2.css'%}">
+        <link rel="stylesheet" href="{%static 'css/nav.css'%}">
+        <link rel="stylesheet" href="{%static 'css/style3.css'%}">
+        <title>AIT</title>
+</head>
+<body>
+    <section class="main">
+        <div class="h12">
+            
+                <nav class="h123">
+                  
+                    <a href="https://atria.edu/home.php"><img src="{% static 'img/logo-ait-v1.png' %}"alt="avatar" ><link href="https://atria.edu/home.php"></a>
+                    <div class="nav-links1">
+                        
+                        <ul>
+                            <li><a href="{% url 'adminm'%}">Admin</a></li>
+                            <li><a href="">Logout</a></li>
+                            
+                            </ul>
+                            </div>
+                            </nav>
+                            
+        </div>
+    </section>
+    <section>    
+        <div class="sidebar">
+            <aside class="w-64" aria-label="Sidebar">
+                <div class="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
+                   <ul class="space-y-2">
+                      <li>
+                        <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <svg class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                              </svg>
+                            <span class="ml-3"><button onclick="toggleText()" type="button" class="btn btn-outline-light"><h6>Profile</h6></button></span>
+                         </a>
+                      </li>
+                      <hr class="rounded">
+                      <li>
+                        <a href="{% url 'Supload'%}" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 6a1 1 0 0 1 2 0v1H7V6zM6 8.3c0-.042.02-.107.105-.175A.637.637 0 0 1 6.5 8h3a.64.64 0 0 1 .395.125c.085.068.105.133.105.175v2.4c0 .042-.02.107-.105.175A.637.637 0 0 1 9.5 11h-3a.637.637 0 0 1-.395-.125C6.02 10.807 6 10.742 6 10.7V8.3z"/>
+                                <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-2 6v1.076c.54.166 1 .597 1 1.224v2.4c0 .816-.781 1.3-1.5 1.3h-3c-.719 0-1.5-.484-1.5-1.3V8.3c0-.627.46-1.058 1-1.224V6a2 2 0 1 1 4 0z"/>
+                            </svg></svg>
+                            <span class="flex-1 ml-3 whitespace-nowrap"><button onclick="update()" type="button" class="btn btn-outline-light"><h6>Upload<br>Student</h6></button></span>
+                           
+                         </a>
+                      </li>
+                      <hr class="rounded">
+                      <li>
+                        <a href="{% url 'Sregister'%}" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 text-white-900 dark:hover:bg-gray-700">
+                           <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-blue" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+                           <span class="flex-1 ml-3 whitespace-nowrap "><button onclick="deleted()" type="button" class="btn btn-outline-light"><h6>Add<br>Student</h6></button></span>
+                          
+                        </a>
+                     </li>
+                     <hr class="rounded">
+                     <li>
+                      <a href="{% url 'Stlist' %}" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 text-white-900 dark:hover:bg-gray-700">
+                         <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-blue" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                          <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+                         <span class="flex-1 ml-3 whitespace-nowrap "><button onclick="" type="button" class="btn btn-outline-light"><h6>Student<br>List</h6></button></span>
+                        
+                      </a>
+                   </li>
+                   <hr class="rounded">
+                    </ul>
+                  </div>
+             </aside>
+        </div>
+
+        <form class="w-full max-w-lg mx-auto py-12" id="Myid">
+
+            <div class="md:flex md:items-center mb-6">
+                <input type="file" class="form-control" id="customFile" />
+          </div>
+
+          <hr class="rounded">
+
+
+
+
+          <div class="flex flex-wrap -mx-3 mb-2">
+          
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                <h6>Semester</h6>
+            
+              </label>
+              <div class="relative">
+                <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                  <option>P - Cycle</option>
+                  <option>C - Cycle</option>
+                  <option>III Sem</option>
+                  <option>IV Sem</option>
+                  <option>V Sem</option>
+                  <option>VI Sem</option>
+                  <option>VII Sem</option>
+                  <option>VIII Sem</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                </div>
+              </div>
+            </div>
+  
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+                <h6>YEAR</h6>
+              </label>
+              <div class="relative">
+                  <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                    <option>I st year</option>
+                    <option>II nd year</option>
+                    <option>III year </option>
+                    <option>IV th year</option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                  </div>
+                </div>
+            </div>
+  
+            
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+                <h6>DEPARTMENT</h6>
+              </label>
+              <div class="relative">
+                  <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                    <option>Ise</option>
+                    <option>Civil</option>
+                    <option>Ece</option>
+                    <option>Mechnical</option>
+                    <option>Cse</option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                  </div>
+                </div>
+            </div>
+  
+            <!-------new-->
+           
+          
+            <!----new end-->
+          </div>
+            
+            
+        
+                
+            <!-------new button  -->
+            <div class="md:flex md:items-center w-full md:w-3/3 py-4 mb-6 md:mb-0 ">
+                <div class="md:w-4/5"></div>
+                <div class="md:w-2/3">
+                   <button type="button" class="btn btn-outline-success"><h6>Add</h6></button>
+                </div>
+              </div>
+            <!-----------new button close-->
+    </form>
+</body>
+</html>

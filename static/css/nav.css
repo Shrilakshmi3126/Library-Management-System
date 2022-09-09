@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    
+  }
+  .btn btn-outline-light{
+    font-size: 200px;
+    font-weight: 700;
+  }
+  .sidebar {
+    margin: 0;
+    padding: -1;
+    padding-top: 50px;
+    background-color: #000000;
+    position: fixed;
+    height: 75%;
+    overflow: hidden;
+  }
+  div.content {
+    margin-left: 200px;
+    font-size: 12px;
+    font-weight: 700;
+    padding-top: 10px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  hr.rounded {
+    border-top: solid  #800e0e;
+  
+    border-radius: 5px;
+  }
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  
+    hr.rounded {
+      border-top: solid  #800e0e;
+    
+      border-radius: 5px;
+  
+      padding-bottom: 50px;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+  .h19{
+      background-color: #000000;
+      min-height:3vh;
+     
+    }
+    
+    
+    .h19 img{
+      width:60%;
+     
+      padding-left: -20%;
+    }
+    
+    .h19{
+      display: flex;
+      padding: 1% 2%;
+      justify-content: space-between;
+      align-items: center;
+      
+    }
+    .h19 ul li a {
+    display:block;
+    padding: 15px;
+    text-decoration: none;
+    color: black ;
+    font-size: 100px;
+    font-weight:700;
+    text-transform: uppercase;
+    margin: 0 10px;
+    }
+    .nav-links5{
+      flex: 1;
+      text-align: right;
+      
+    }
+    .nav-links5 ul li{
+      list-style: none;
+      display: inline-block;
+      padding: 5px 20px;
+      
+      position: relative;
+    }
+    .nav-links5 ul li a{
+      color: rgba(239, 207, 28, 0.612);
+      text-decoration: none;
+      padding-left: 6%;
+      position: relative;
+      font-size: 21px;
+      font-family: sans-serif;
+      font-weight: 700;
+      padding-bottom: 0.25rem;
+      font-style: oblique;
+      transition: all 0.2s;
+    }
+    .nav-links5 ul li a::before{
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 0%;
+      height: 3px;
+      background-color:rebeccapurple;
+      transition: width 0.25s ease-out;
+      background-image: linear-gradient(to right,rgb(36, 79, 101),rgba(255, 128, 0, 0.405));
+    
+    }
+    
+    .nav-links5 ul li a:hover::before{
+      width: 100%;
+      left:0;
+      right: auto;
+    }
+     
+  
+  
+    h6{
+      font-weight: 600;
+    }

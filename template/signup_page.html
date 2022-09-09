@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Signup Page</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: rgba(0, 255, 234, 0.904)
+            }
+            button{
+                background-color: #3458a5;
+                width: 25%;
+                padding: 15px;
+                color: black;
+                border: none;
+                float: center;
+                font-size: 15px;
+            }
+            label{
+                font-size: 20px;
+            }
+            form{
+                border: 3px solid #f1f1f1;
+            }
+            input[type=email],input[type=text]{
+                width: 30%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid green;
+                box-sizing: border-box;
+            }
+            input[type=radio]{
+                height: 18px;
+                width: 18px;
+            }
+            button:hover{
+                opacity:0.7;
+
+            }
+            .container{
+                padding: 50px;
+                background-color: rgba(0, 255, 234, 0.904);
+            }
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+            }
+              
+            img.avatar {
+                width: 10%;
+                border-radius: 50%;
+            }  
+        </style>
+    </head>
+    <body>
+        <center><h1>Register From</h1></center>
+        <form action="#" method="post">
+            {% csrf_token %}
+            {% load static %}
+            <center><div class="container">
+                <div class="imgcontainer">
+                    <img src="{% static 'avatar_img2.png' %}" alt="Avatar" class="avatar">
+                </div>
+                <label for='first_name'><b>Name : </b></label>
+		        <input type='text' placeholder="Enter your first name" name='nam' required><br>
+		        <label for='userid'><b>userid :</b></label>
+		        <input type='text' placeholder='Enter Userid' name='userid' required><br>
+		        <label for='address'><b>address : </b></label>
+            	<input type="text" placeholder="Enter address" name="address" required><br>  
+            	<label for ='phone'><b>Phone :  </b></label>
+            	<input type="text" placeholder="Enter phone" name="phone" float="right"  required><br>  
+            	
+            	<button type="submit"><b>Enter</b></button><br>     
+            	Already an account <a href="{% url 'login'%}"> Login </a>
+            </div></center>
+        </form>
+    </body>

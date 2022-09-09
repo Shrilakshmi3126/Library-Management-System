@@ -1,0 +1,345 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>AIT</title>
+    <link href="{%static 'css/nav.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="stylesheet" href="{%static 'css/style2.css'%}">
+    <link rel = "icon" href ="{%static 'img/44851230.jpg'%}" type = "image/x-icon">
+</head>
+<body>
+  ----nav open-
+  <div class="h22">
+    <nav class="h19">
+        <a href="https://atria.edu/home.php"><img src="{%static 'img/logo-ait-v1.png'%}" alt="avatar" ><link href="https://atria.edu/home.php"></a>
+        <div class="nav-links5">
+            
+            <ul>
+                <li><a href="{% url 'adminm'%}">Admin</a></li>
+                <li><a href="">Logout</a></li>
+                <li><a href=""></a>
+                </li>
+                </ul>
+                </div>
+                </nav>
+                </div>
+  -------nav close--
+  <section class="h0">
+
+  </section><br>
+  <center><h3><b>Enter checkin and checkout details of student</b></h3></center><br>
+
+    <form class="w-full max-w-lg mx-auto py-12" id="Myid" method="post" action="{% url 'checkin'%}">
+      {% csrf_token %}
+
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="inline-full-name">
+                Student Name
+              </label>
+            </div>
+            <div class="md:w-2/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" name="sn" placeholder="Enter Student Name">
+            </div>
+        </div>
+
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="inline-full-name">
+                USN
+              </label>
+            </div>
+            <div class="md:w-2/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" name="usn"  placeholder="USN">
+            </div>
+        </div>
+
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="inline-full-name">
+                Checked in time
+              </label>
+            </div>
+            <div class="md:w-2/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" name="chin" placeholder="Checked in time">
+            </div>
+        </div>
+
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="inline-full-name">
+                Checked out time
+              </label>
+            </div>
+            <div class="md:w-2/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text"  name="chout" placeholder="Checked out time">
+            </div>
+        </div>
+        
+        <div class="flex flex-wrap -mx-3 mb-2">
+          
+          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+              <h6>Semester</h6>
+            </label>
+            <div class="relative">
+              <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" name="sem">
+                <option>P - Cycle</option>
+                <option>C - Cycle</option>
+                <option>III Sem</option>
+                <option>IV Sem</option>
+                <option>V Sem</option>
+                <option>VI Sem</option>
+                <option>VII Sem</option>
+                <option>VIII Sem</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+              <h6>YEAR</h6>
+            </label>
+            <div class="relative">
+                <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" name="year">
+                  <option>I st year</option>
+                  <option>II nd year</option>
+                  <option>III year </option>
+                  <option>IV th year</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                </div>
+              </div>
+          </div>
+
+          
+          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+              <h6>BRANCH</h6>
+            </label>
+            <div class="relative">
+                <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" name="dept">
+                  <option>Ise</option>
+                  <option>Civil</option>
+                  <option>Ece</option>
+                  <option>Mechnical</option>
+                  <option>Cse</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                </div>
+              </div>
+          </div>
+
+         
+         
+        
+        ----ne
+    </div>
+    
+            
+       -------new button  
+        <div class="md:flex md:items-center w-full md:w-3/3 py-4 mb-6 md:mb-0 ">
+            <div class="md:w-1/3"></div>
+            <div class="md:w-2/3">
+               <button type="submit" class="btn btn-outline-success">UPLOAD</button>
+            </div>
+          </div>
+        -----------new button close-
+</form>
+    
+</body>
+</html>--->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>AIT</title>
+    <link href="{%static 'css/nav.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'css/style3.css'%}">
+    <link rel="stylesheet" href="{%static 'css/style2.css'%}">
+    <link rel = "icon" href ="{%static 'img/44851230.jpg'%}" type = "image/x-icon">
+</head>
+<body>
+  <!----nav open----------->
+  <div class="h22">
+    <nav class="h19">
+        <a href="https://atria.edu/home.php"><img src="{%static 'img/logo-ait-v1.png'%}" alt="avatar" ><link href="https://atria.edu/home.php"></a>
+        <div class="nav-links5">
+            
+            <ul>
+                <li><a href="{% url 'checkin'%}">logbook</a></li>
+                <li><a href="{% url 'adminm'%}">Admin</a></li>
+                <li><a href="{% url 'welcome'%}">Logout</a></li>
+                <li><a href=""></a>
+                </li>
+                </ul>
+                </div>
+                </nav>
+                </div>
+  <!-------nav close------->
+  <section class="h0">
+
+  </section><br>
+  <center><h3><b>Enter check in and check out details of student</h3></b></center><br>
+    <form class="w-full max-w-lg mx-auto py-12" id="Myid" method="post" action="{% url 'checkin'%}">
+      {% csrf_token %}
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="inline-full-name">
+                Student Name
+              </label>
+            </div>
+            <div class="md:w-2/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" name="sn" placeholder="Enter Student Name">
+            </div>
+        </div>
+
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="inline-full-name">
+                USN
+              </label>
+            </div>
+            <div class="md:w-2/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" name="usn" placeholder="USN">
+            </div>
+        </div>
+
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="inline-full-name">
+                Checked in time
+              </label>
+            </div>
+            <div class="md:w-2/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" name="chin" placeholder="Checked in time">
+            </div>
+        </div>
+
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="inline-full-name">
+                Checked out time
+              </label>
+            </div>
+            <div class="md:w-2/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" name="chout" placeholder="Checked out time">
+            </div>
+        </div>
+        
+        <div class="flex flex-wrap -mx-3 mb-2">
+          
+          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+              <h6>Semester</h6>
+            </label>
+            <div class="relative">
+              <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" name="sem">
+                <option>P - Cycle</option>
+                <option>C - Cycle</option>
+                <option>III Sem</option>
+                <option>IV Sem</option>
+                <option>V Sem</option>
+                <option>VI Sem</option>
+                <option>VII Sem</option>
+                <option>VIII Sem</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+              <h6>YEAR</h6>
+            </label>
+            <div class="relative">
+                <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" name="year">
+                  <option>I st year</option>
+                  <option>II nd year</option>
+                  <option>III year </option>
+                  <option>IV th year</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                </div>
+              </div>
+          </div>
+
+          
+          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+              <h6>BRANCH</h6>
+            </label>
+            <div class="relative">
+                <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" name="dept">
+                  <option>Ise</option>
+                  <option>Civil</option>
+                  <option>Ece</option>
+                  <option>Mechnical</option>
+                  <option>Cse</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                </div>
+              </div>
+          </div>
+
+          <!-------new-->
+         
+        
+          <!----new end-->
+    </div>
+    
+            
+        <!-------new button  -->
+        <div class="md:flex md:items-center w-full md:w-3/3 py-4 mb-6 md:mb-0 ">
+            <div class="md:w-1/3"></div>
+            <div class="md:w-2/3">
+               <button type="submit" class="btn btn-outline-success">UPLOAD</button>
+            </div>
+          </div>
+        <!-----------new button close-->
+</form>
+    
+</body>
+</html>

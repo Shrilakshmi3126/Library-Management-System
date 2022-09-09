@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="{%static 'css/nav.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'css/style2.css'%}">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel = "icon" href ="{%static 'img/44851230.jpg'%}" type = "image/x-icon">
+    <title>AIT</title>
+</head>
+<body>
+    <div class="h22">
+        <nav class="h19">
+            <a href="https://atria.edu/home.php"><img src="{%static 'img/logo-ait-v1.png'%}" alt="avatar" ><link href="https://atria.edu/home.php"></a>
+            <div class="nav-links5">
+                
+                <ul>
+                    <li><a href="{% url 'adminm'%}">Admin</a></li>
+                    <li><a href="">Logout</a></li>
+                    <li><a href=""></a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+    
+                    <div class="sidebar">
+                        <aside class="w-64" aria-label="Sidebar">
+                            <div class="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
+                               <ul class="space-y-2">
+
+                                <!---<li>
+                                  <a href="{% url 'fadmin'%}" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                                      <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/>
+                                      </svg></svg>
+                    
+                                      </svg></svg>
+                                      <span class="flex-1 ml-3 whitespace-nowrap"><button onclick="toggleText()" type="button" class="btn btn-outline-light">Upload Book</button></span>
+                                     
+                                   </a>
+                                </li>
+                                <hr class="rounded">--->
+
+
+
+
+                                <li>
+                                  <a href="{% url 'insertbook'%}" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                                      <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM6.354 9.854a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 8.707V12.5a.5.5 0 0 1-1 0V8.707L6.354 9.854z"/>
+                                      </svg></svg>
+                    
+                                      </svg></svg>
+                                      <span class="flex-1 ml-3 whitespace-nowrap"><button onclick="insertB()" type="button" class="btn btn-outline-light">Insert Book</button></span>
+                                     
+                                   </a>
+                                   <hr class="rounded">
+                                </li>
+
+
+
+
+
+                                <li>
+                                  <a href="{% url 'UpdBook'%}" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                                    <svg class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> 
+                                      <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/></svg>
+                                    <span class="ml-3"><button onclick="update()" type="button" class="btn btn-outline-light">Update Book</button></span>
+                                 </a>
+                                 <hr class="rounded">
+                                </li>
+
+                                <li>
+                                  <a href="{% url 'deletebook'%}" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                                    <svg class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/></svg>
+                                    <span class="ml-3"><button onclick="deleted()" type="button" class="btn btn-outline-light">Delete Book</button></span>
+                                 </a>
+                                
+                                </li>
+                                <hr class="rounded">
+
+
+                                  
+
+                                </ul>
+                              </div>
+                         </aside>
+                    </div>
+                    <!-----sidebar ends------>
+                    
+                    <form class="w-full max-w-lg mx-auto py-12" id="Myid">
+                    
+                          <div class="md:flex md:items-center mb-6">
+                            <input type="file" class="form-control" id="customFile" />
+                      </div>
+
+                      <hr class="rounded">
+                     
+
+                            <div class="flex flex-wrap -mx-3 mb-2">
+                              
+                              <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                                  Semester
+                                </label>
+                                <div class="relative">
+                                  <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                                    <option>P - Cycle</option>
+                                    <option>C - Cycle</option>
+                                    <option>III Sem</option>
+                                    <option>IV Sem</option>
+                                    <option>V Sem</option>
+                                    <option>VI Sem</option>
+                                    <option>VII Sem</option>
+                                    <option>VIII Sem</option>
+                                  </select>
+                                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                  </div>
+                                </div>
+                              </div>
+                    
+                              <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+                                  YEAR
+                                </label>
+                                <div class="relative">
+                                    <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                                      <option>I st year</option>
+                                      <option>II nd year</option>
+                                      <option>III year </option>
+                                      <option>IV th year</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                      <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                    </div>
+                                  </div>
+                              </div>
+                              
+                    
+                              <!-------new-->
+                              <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+                                  DEPARTMENT
+                                </label>
+                                <div class="relative">
+                                    <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                                      <option>Ise</option>
+                                      <option>Civil</option>
+                                      <option>Ece</option>
+                                      <option>Mechnical</option>
+                                      <option>Cse</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                      <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                    </div>
+                                  </div>
+                              </div>
+
+                             
+                            
+                              <!----new end-->
+                        </div>
+                        
+                                
+                            <!-------new button  -->
+                            <div class="md:flex md:items-center w-full md:w-3/3 py-4 mb-6 md:mb-0 ">
+                                <div class="md:w-1/3"></div>
+                                <div class="md:w-2/3">
+                                   <button type="button" class="btn btn-outline-success">UPLOAD</button>
+                                </div>
+                              </div>
+                            <!-----------new button close-->
+                    </form>
+
+
+
+                    <!-----button-->
+                    
+                    </body>
+                    <script src="{%static 'js/ss2.js'%}"></script>
+                    </html>
+                    
